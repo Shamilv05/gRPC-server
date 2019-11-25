@@ -3,7 +3,7 @@ syntax = "proto3";
 package uuidsender;
 
 service UUIDSender {
-    rpc GetValue(Empty) returns (UUID);
+    rpc IdSend(Empty) returns (UUID);
 }
 
 message UUID {
