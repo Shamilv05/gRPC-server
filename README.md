@@ -17,4 +17,4 @@ evans protos/uuid.proto -p 8080
 call IdSend
 ```
 
-###### Response type: {uuid: <uuid>}
+###### Response type: {uuid: "generated uuid"}
