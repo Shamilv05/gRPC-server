@@ -1,8 +1,20 @@
-# gRPC-server
-Simple gRPC server written in C++
+# gRPC Server written in Golang
+To run the server, use the following commands
+```
+go build main.go
+./main
+```
 
-To compile protoc files, run the following command:
+To connect to server you need to install 'evans':
 ```
-$ protoc -I <path_to_folder_with_protoc> --grpc_out=. --plugin=protoc-gen-grpc=`which grpc_cpp_plugin` <path_to_folder_with_protoc>/<protoc_filename>
-$ protoc -I <path_to_folder_with_protoc> --cpp_out=. <path_to_folder_with_protoc>/<protoc_filename>
+brew tap ktr0731/evans 
+brew install evans 
 ```
+
+After that, open another terminal and enter:
+```
+evans protos/uuid.proto -p 8080
+call IdSend
+```
+
+###### Response type: {uuid: <uuid>}
