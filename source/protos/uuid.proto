@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package uuidsender;
+
+service UUIDSender {
+    rpc GetValue(Empty) returns (UUID);
+}
+
+message UUID {
+    string uuid = 1;;
+}
+
+message Empty {
+
+}
