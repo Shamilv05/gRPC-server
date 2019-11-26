@@ -7,6 +7,7 @@ import (
 	"log"
 	"net/http"
 	"strings"
+	"time"
 )
 
 type CombinerServer struct {}
@@ -39,9 +40,10 @@ func AsyncHttpGets(urls []string) string {
 			if len(result.String()) == 144 {
 				return result.String()
 			}
+		case <-time.After(7 * time.Second):
+			return result.String()
 		}
 	}
-
 	return result.String()
 }
 
