@@ -48,7 +48,8 @@ func AsyncHttpGets(urls []string) string {
 }
 
 func (c *CombinerServer) Request(ctx context.Context, req *api.Empty) (*api.Response, error) {
-	urls := []string{"http://localhost:8080/id", "http://localhost:8081/id", "http://localhost:8082/id", "http://localhost:8083/id"}
+	urls := []string{"http://localhost:8080/id", "http://localhost:8081/id",
+					"http://localhost:8082/id", "http://localhost:8083/id"}
 	result := AsyncHttpGets(urls)
 	return &api.Response{Value: result}, nil
 }
