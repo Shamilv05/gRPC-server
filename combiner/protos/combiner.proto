@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package combiner;
+
+service Combiner {
+    rpc Request(Empty) returns (Response);
+}
+
+message Empty {}
+
+message Response {
+    string value = 1;
+}
